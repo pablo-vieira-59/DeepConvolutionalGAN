@@ -87,20 +87,20 @@ def restore_images(images :np.array):
 
 # Paths
 extension = "/*.png"
-images_path = 'images/forex'
-save_path = 'images_npy/forex.npy'
+images_path = 'images/cars'
+save_path = 'images_npy/cars.npy'
 preview_path = 'preview/'
 
 # Resize Shape
-r_shape = (64, 64)
+r_shape = (64, 128)
 
 # Prepare Images
 images = read_images(images_path, extension)
-#images = crop_images(images, 256)
+images = crop_images(images, 256)
 images = resize_images(images, r_shape)
-images = apply_gray_scale(images)
+#images = apply_gray_scale(images)
 save_images(images, save_path)
-save_preview(images, preview_path)
+#save_preview(images, preview_path)
 
 print('Dataset Shape :', images.shape)
 
